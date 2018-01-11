@@ -4,9 +4,9 @@ var path = require('path');
 var async = require('async');
 var spawn = require('child_process').spawn;
 
-var BitcoinRPC = require('bitcoind-rpc-dash');
+var BitcoinRPC = require('bitcoind-rpc-monoeci');
 var rimraf = require('rimraf');
-var bitcore = require('bitcore-lib-dash');
+var bitcore = require('bitcore-lib-monoeci');
 var chai = require('chai');
 var should = chai.should();
 
@@ -23,7 +23,7 @@ describe('Bitcoin Cluster', function() {
   var nodesConf = [
     {
       datadir: path.resolve(__dirname, './data/node1'),
-      conf: path.resolve(__dirname, './data/node1/dash.conf'),
+      conf: path.resolve(__dirname, './data/node1/monoeci.conf'),
       rpcuser: 'bitcoin',
       rpcpassword: 'local321',
       rpcport: 30521,
@@ -32,7 +32,7 @@ describe('Bitcoin Cluster', function() {
     },
     {
       datadir: path.resolve(__dirname, './data/node2'),
-      conf: path.resolve(__dirname, './data/node2/dash.conf'),
+      conf: path.resolve(__dirname, './data/node2/monoeci.conf'),
       rpcuser: 'bitcoin',
       rpcpassword: 'local321',
       rpcport: 30522,
@@ -41,7 +41,7 @@ describe('Bitcoin Cluster', function() {
     },
     {
       datadir: path.resolve(__dirname, './data/node3'),
-      conf: path.resolve(__dirname, './data/node3/dash.conf'),
+      conf: path.resolve(__dirname, './data/node3/monoeci.conf'),
       rpcuser: 'bitcoin',
       rpcpassword: 'local321',
       rpcport: 30523,

@@ -6,11 +6,11 @@ var path = require('path');
 var index = require('..');
 var log = index.log;
 
-var p2p = require('bitcore-p2p-dash');
+var p2p = require('bitcore-p2p-monoeci');
 var Peer = p2p.Peer;
 var Messages = p2p.Messages;
 var chai = require('chai');
-var bitcore = require('bitcore-lib-dash');
+var bitcore = require('bitcore-lib-monoeci');
 var Transaction = bitcore.Transaction;
 var BN = bitcore.crypto.BN;
 var async = require('async');
@@ -21,7 +21,7 @@ var bitcoind;
 var should = chai.should();
 var assert = chai.assert;
 var sinon = require('sinon');
-var BitcoinRPC = require('bitcoind-rpc-dash');
+var BitcoinRPC = require('bitcoind-rpc-monoeci');
 var transactionData = [];
 var blockHashes = [];
 var txs = [];
@@ -63,7 +63,7 @@ describe('P2P Functionality', function() {
         log.error('error="%s"', err.message);
       });
 
-      log.info('Waiting for Dash Core to initialize...');
+      log.info('Waiting for Monoeci Core to initialize...');
 
       bitcoind.start(function(err) {
         if (err) {
