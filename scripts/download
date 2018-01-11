@@ -6,7 +6,7 @@ root_dir="${HOME}/.bitcore"
 platform=`uname -a | awk '{print tolower($1)}'`
 arch=`uname -m`
 version="0.12.2"
-url="https://bamboo.monoeci.org/browse/DASHL-REL-13/artifact/JOB1/gitian-linux-monoeci-dist"
+url="https://bamboo.monoeci.io/browse/DASHL-REL-13/artifact/JOB1/gitian-linux-monoeci-dist"
 
 if [ "${platform}" == "linux" ]; then
     if [ "${arch}" == "x86_64" ]; then
