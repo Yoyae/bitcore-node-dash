@@ -53,7 +53,7 @@ download_bitcoind() {
             echo "Unpacking monoeci distribution"
             tar -xvzf $tarball_name
             if test $? -eq 0; then
-                ln -sf "dashcore-${version}/bin/dashd"
+                ln -sf "dashcore-${version}/bin/monoecid"
                 return;
             fi
         fi

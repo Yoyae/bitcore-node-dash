@@ -19,7 +19,7 @@ var BitcoinService = index.services.Bitcoin;
 describe('Bitcoin Cluster', function() {
   var node;
   var daemons = [];
-  var execPath = path.resolve(__dirname, process.env.HOME, './.bitcore/data/dashd')
+  var execPath = path.resolve(__dirname, process.env.HOME, './.bitcore/data/monoecid')
   var nodesConf = [
     {
       datadir: path.resolve(__dirname, './data/node1'),
@@ -51,7 +51,7 @@ describe('Bitcoin Cluster', function() {
   ];
 
   before(function(done) {
-    log.info('Starting 3 dashd daemons');
+    log.info('Starting 3 monoecid daemons');
     this.timeout(200000);
     async.each(nodesConf, function(nodeConf, next) {
       var opts = [

@@ -42,7 +42,7 @@
   },
   "tags": [
     "monoeci",
-    "dashd"
+    "monoecid"
   ],
   "dependencies": {
     "async": "^1.3.0",

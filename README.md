@@ -31,7 +31,7 @@ bitcore-node-monoeci start
 
 This will create a directory with configuration files for your node and install the necessary dependencies.
 
-Please note that [Monoeci Core v0.12.1.x](https://github.com/yoyae/monoeci/tree/v0.12.1.x) will be downloaded automatically. Once completed the dashd binary should be placed into the &lt;monoeci-data-dir&gt; folder specified during node creation.
+Please note that [Monoeci Core v0.12.1.x](https://github.com/yoyae/monoeci/tree/v0.12.1.x) will be downloaded automatically. Once completed the monoecid binary should be placed into the &lt;monoeci-data-dir&gt; folder specified during node creation.
 
 For more information about (and developing) services, please see the [Service Documentation](docs/services.md).
 
@@ -60,8 +60,9 @@ Please send pull requests for bug fixes, code optimization, and ideas for improv
 
 ## License
 
-Code released under [the MIT license](https://github.com/bitpay/bitcore-node-monoeci/blob/master/LICENSE).
+Code released under [the MIT license](https://github.com/yoyae/bitcore-node-monoeci/blob/master/LICENSE).
 
 Copyright 2013-2015 BitPay, Inc.
 
 - bitcoin: Copyright (c) 2009-2015 Bitcoin Core Developers (MIT License)
+- monoeci: Copyright (c) 2016-2017 The Monoeci Foundation, Inc.

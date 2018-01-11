@@ -786,7 +786,7 @@ describe('Bitcoin Service', function() {
         }
       };
       var bitcoind = new BitcoinService(config);
-      bitcoind._getDefaultConf().rpcport.should.equal(9998);
+      bitcoind._getDefaultConf().rpcport.should.equal(24156);
     });
     it('will get default rpc port for testnet', function() {
       var config = {
@@ -5383,8 +5383,8 @@ describe('Bitcoin Service', function() {
 				        break;
 				      case "addr":
 					      return cb(null, { result:
-						      { '06c4c53b64019a021e8597c19e40807038cab4cd422ca9241db82aa19887354b-0': "108.61.209.47:9999",
-							      'b76bafae974b80204e79858eb62aedec41159519c90d23f811cca1eca40f2e4c-1': "34.226.228.73:9999"}
+						      { '06c4c53b64019a021e8597c19e40807038cab4cd422ca9241db82aa19887354b-0': "108.61.209.47:24157",
+							      'b76bafae974b80204e79858eb62aedec41159519c90d23f811cca1eca40f2e4c-1': "34.226.228.73:24157"}
 					      });
 				      case "status":
 					      return cb(null, { result:
@@ -5405,7 +5405,7 @@ describe('Bitcoin Service', function() {
 		    MNList[0].vin.should.equal("06c4c53b64019a021e8597c19e40807038cab4cd422ca9241db82aa19887354b-0");
 		    MNList[0].status.should.equal("ENABLED");
 		    MNList[0].rank.should.equal(1);
-		    MNList[0].ip.should.equal("108.61.209.47:9999");
+		    MNList[0].ip.should.equal("108.61.209.47:24157");
 		    MNList[0].protocol.should.equal(70206);
 		    MNList[0].payee.should.equal("Xfpp5BxPfFistPPjTe6FucYmtDVmT1GDG3");
 		    MNList[0].activeseconds.should.equal(7016289);
@@ -5449,8 +5449,8 @@ describe('Bitcoin Service', function() {
                 break;
               case "addr":
                 return cb(null, { result:
-                  { '06c4c53b64019a021e8597c19e40807038cab4cd422ca9241db82aa19887354b-0': "108.61.209.47:9999",
-                    'b76bafae974b80204e79858eb62aedec41159519c90d23f811cca1eca40f2e4c-1': "34.226.228.73:9999"}
+                  { '06c4c53b64019a021e8597c19e40807038cab4cd422ca9241db82aa19887354b-0': "108.61.209.47:24157",
+                    'b76bafae974b80204e79858eb62aedec41159519c90d23f811cca1eca40f2e4c-1': "34.226.228.73:24157"}
                 });
               case "status":
                 return cb(null, { result:
@@ -5504,8 +5504,8 @@ describe('Bitcoin Service', function() {
                 break;
               case "addr":
                 return cb(null, { result:
-                  { '06c4c53b64019a021e8597c19e40807038cab4cd422ca9241db82aa19887354b-0': "108.61.209.47:9999",
-                    'b76bafae974b80204e79858eb62aedec41159519c90d23f811cca1eca40f2e4c-1': "34.226.228.73:9999"}
+                  { '06c4c53b64019a021e8597c19e40807038cab4cd422ca9241db82aa19887354b-0': "108.61.209.47:24157",
+                    'b76bafae974b80204e79858eb62aedec41159519c90d23f811cca1eca40f2e4c-1': "34.226.228.73:24157"}
                 });
               case "status":
                 return cb(null, { result:
