@@ -45,10 +45,10 @@ download_bitcoind() {
         if test -e "${tarball_name}"; then
             echo "Unpacking monoeci distribution"
             tar -xvzf $tarball_name
-            if test $? -eq 0; then
-                ln -sf "monoeciCore-${version}/bin/monoecid"
-                return;
-            fi
+#            if test $? -eq 0; then
+#                ln -sf "monoeciCore-${version}/bin/monoecid"
+#                return;
+#            fi
         fi
     fi
     echo "Monoeci binary distribution could not be downloaded"
