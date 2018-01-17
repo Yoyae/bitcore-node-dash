@@ -2,7 +2,7 @@
   "name": "bitcore-node-monoeci",
   "description": "Full node with extended capabilities using Bitcore and Monoeci Core",
   "author": "BitPay <dev@bitpay.com>",
-  "version": "3.0.6",
+  "version": "3.0.7",
   "main": "./index.js",
   "repository": "git://github.com/yoyae/bitcore-node-monoeci.git",
   "homepage": "https://github.com/yoyae/bitcore-node-monoeci",
@@ -24,6 +24,10 @@
     {
       "name": "Patrick Nagurny",
       "email": "patrick@bitpay.com"
+    },
+    {
+      "name": "Francois Gineste",
+      "email": "gingin.fr@gmail.com"
     }
   ],
   "bin": {
