@@ -2,7 +2,7 @@
 
 set -e
 
-root_dir="${HOME}/.bitcore"
+scaffold_dir="$PWD/lib/scaffold"
 platform=`uname -a | awk '{print tolower($1)}'`
 arch=`uname -m`
 version="0.12.2"
@@ -18,13 +18,13 @@ else
 fi
 
 binary_url="${url}/${tarball_name}"
+
 download_bitcoind() {
 
-    echo ${root_dir}
-    mkdir -p "${root_dir}"
-    mkdir -p "${root_dir}/data"
+    echo ${scaffold_dir}
+    mkdir -p "${scaffold_dir}/data"
 
-    cd "${root_dir}/data"
+    cd "${scaffold_dir}/data"
 
     echo "Downloading monoeci: ${binary_url}"
 
@@ -45,7 +45,7 @@ download_bitcoind() {
         if test -e "${tarball_name}"; then
             echo "Unpacking monoeci distribution"
             tar -xvzf $tarball_name
-	    return;
+	         return;
 #            if test $? -eq 0; then
 #                ln -sf "monoeciCore-${version}/bin/monoecid"
 #                return;
@@ -59,6 +59,7 @@ download_bitcoind() {
 download=1
 
 if [ "${SKIP_BITCOIN_DOWNLOAD}" = 1 ]; then
+    echo "Skip download"
     download=0;
 fi
 
@@ -68,10 +69,9 @@ while [ -n "$1" ]; do
 
   case $param in
     --skip-bitcoin-download)
+          echo "Skip download"
           download=0
           ;;
-   *)
-	  ;;
   esac
   shift
 done
