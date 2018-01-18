@@ -1,13 +1,13 @@
 {
-  "name": "bitcore-node-dash",
-  "description": "Full node with extended capabilities using Bitcore and Dash Core",
+  "name": "bitcore-node-monoeci",
+  "description": "Full node with extended capabilities using Bitcore and Monoeci Core",
   "author": "BitPay <dev@bitpay.com>",
-  "version": "3.0.6",
+  "version": "3.0.7",
   "main": "./index.js",
-  "repository": "git://github.com/dashevo/bitcore-node-dash.git",
-  "homepage": "https://github.com/dashevo/bitcore-node-dash",
+  "repository": "git://github.com/yoyae/bitcore-node-monoeci.git",
+  "homepage": "https://github.com/yoyae/bitcore-node-monoeci",
   "bugs": {
-    "url": "https://github.com/dashevo/bitcore-node-dash/issues"
+    "url": "https://github.com/yoyae/bitcore-node-monoeci/issues"
   },
   "contributors": [
     {
@@ -24,14 +24,17 @@
     {
       "name": "Patrick Nagurny",
       "email": "patrick@bitpay.com"
+    },
+    {
+      "name": "Francois Gineste",
+      "email": "gingin.fr@gmail.com"
     }
   ],
   "bin": {
-    "bitcore-node-dash": "./bin/bitcore-node-dash"
+    "bitcore-node-monoeci": "./bin/bitcore-node-monoeci"
   },
   "scripts": {
     "preinstall": "./scripts/download",
-    "verify": "./scripts/download --skip-bitcoin-download --verify-bitcoin-download",
     "test": "mocha -R spec --recursive",
     "regtest": "./scripts/regtest",
     "jshint": "jshint --reporter=node_modules/jshint-stylish ./lib",
@@ -41,13 +44,13 @@
     "bitcoind_test": "./node_modules/.bin/mocha test/services/bitcoind.unit.js"
   },
   "tags": [
-    "dash",
-    "dashd"
+    "monoeci",
+    "monoecid"
   ],
   "dependencies": {
     "async": "^1.3.0",
-    "bitcoind-rpc-dash": "^1.0.1",
-    "bitcore-lib-dash": "^0.15.2",
+    "bitcoind-rpc-monoeci": ">=1.0.0",
+    "bitcore-lib-monoeci": ">0.15.2",
     "body-parser": "^1.13.3",
     "colors": "^1.1.2",
     "commander": "^2.8.1",
@@ -69,7 +72,7 @@
   },
   "devDependencies": {
     "benchmark": "1.0.0",
-    "bitcore-p2p-dash": "^1.1.6",
+    "bitcore-p2p-monoeci": ">=1.1.5",
     "chai": "^3.5.0",
     "coveralls": "^2.11.9",
     "istanbul": "^0.4.3",
