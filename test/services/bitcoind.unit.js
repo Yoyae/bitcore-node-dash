@@ -6,7 +6,7 @@ var path = require('path');
 var EventEmitter = require('events').EventEmitter;
 var should = require('chai').should();
 var crypto = require('crypto');
-var bitcore = require('bitcore-lib-dash');
+var bitcore = require('bitcore-lib-monoeci');
 var _ = bitcore.deps._;
 var sinon = require('sinon');
 var proxyquire = require('proxyquire');
@@ -644,7 +644,7 @@ describe('Bitcoin Service', function() {
   });
 
   describe('#_wrapRPCError', function() {
-    it('will convert bitcoind-rpc-dash error object into JavaScript error', function() {
+    it('will convert bitcoind-rpc-monoeci error object into JavaScript error', function() {
       var bitcoind = new BitcoinService(baseConfig);
       var error = bitcoind._wrapRPCError({message: 'Test error', code: -1});
       error.should.be.an.instanceof(errors.RPCError);
@@ -786,7 +786,7 @@ describe('Bitcoin Service', function() {
         }
       };
       var bitcoind = new BitcoinService(config);
-      bitcoind._getDefaultConf().rpcport.should.equal(9998);
+      bitcoind._getDefaultConf().rpcport.should.equal(24156);
     });
     it('will get default rpc port for testnet', function() {
       var config = {
@@ -846,7 +846,7 @@ describe('Bitcoin Service', function() {
         }
       };
       var bitcoind = new BitcoinService(config);
-      bitcoind._getNetworkConfigPath().should.equal('testnet3/dash.conf');
+      bitcoind._getNetworkConfigPath().should.equal('testnet3/monoeci.conf');
     });
     it('will get default rpc port for regtest', function() {
       bitcore.Networks.enableRegtest();
@@ -860,7 +860,7 @@ describe('Bitcoin Service', function() {
         }
       };
       var bitcoind = new BitcoinService(config);
-      bitcoind._getNetworkConfigPath().should.equal('regtest/dash.conf');
+      bitcoind._getNetworkConfigPath().should.equal('regtest/monoeci.conf');
     });
   });
 
@@ -5152,7 +5152,7 @@ describe('Bitcoin Service', function() {
                     "payment_amount": 3,
                     "start_epoch": 1484661709,
                     "type": 1,
-                    "url": "https://www.dash.org"
+                    "url": "https://www.monoeci.io"
                 },
                 "AbsoluteYesCount": 0,
                 "YesCount": 0,
@@ -5168,7 +5168,7 @@ describe('Bitcoin Service', function() {
                     "payment_amount": 98,
                     "start_epoch": 1484654915,
                     "type": 1,
-                    "url": "https://www.dash.org"
+                    "url": "https://www.monoeci.io"
                 },
                 "AbsoluteYesCount": 0,
                 "YesCount": 0,
@@ -5184,7 +5184,7 @@ describe('Bitcoin Service', function() {
                     "payment_amount": 84,
                     "start_epoch": 1483765282,
                     "type": 1,
-                    "url": "https://www.dash.org"
+                    "url": "https://www.monoeci.io"
                 },
                 "AbsoluteYesCount": 0,
                 "YesCount": 0,
@@ -5228,7 +5228,7 @@ describe('Bitcoin Service', function() {
       var gobject = sinon.stub().callsArgWith(2, null, {
         result: {
           "DataHex": "5b5b2270726f706f73616c222c7b22656e645f65706f6368223a313438333835353139332c226e616d65223a2237656139616366663561653833643863396532313764333061326234643130656638663137316638222c227061796d656e745f61646472657373223a22795a3744596b44484348664831647737724b6459614b6356796b5a6d756e62714e4c222c227061796d656e745f616d6f756e74223a38342c2273746172745f65706f6368223a313438333736353238322c2274797065223a312c2275726c223a2268747470733a2f2f7777772e646173682e6f7267227d5d5d",
-          "DataString": "[[\"proposal\",{\"end_epoch\":1483855193,\"name\":\"7ea9acff5ae83d8c9e217d30a2b4d10ef8f171f8\",\"payment_address\":\"yZ7DYkDHCHfH1dw7rKdYaKcVykZmunbqNL\",\"payment_amount\":84,\"start_epoch\":1483765282,\"type\":1,\"url\":\"https://www.dash.org\"}]]",
+          "DataString": "[[\"proposal\",{\"end_epoch\":1483855193,\"name\":\"7ea9acff5ae83d8c9e217d30a2b4d10ef8f171f8\",\"payment_address\":\"yZ7DYkDHCHfH1dw7rKdYaKcVykZmunbqNL\",\"payment_amount\":84,\"start_epoch\":1483765282,\"type\":1,\"url\":\"https://www.monoeci.io\"}]]",
           "Hash": "4ef24027c631c43035aa4cf5c672e1298311decd9cffbd16731f454c9c0d6d00",
           "CollateralHash": "6be3a3ae49498ec8f4e5cba56ac44164aeb78e57f2dbc716f4ff863034830d08",
           "CreationTime": 1483724928,
@@ -5282,7 +5282,7 @@ describe('Bitcoin Service', function() {
         should.equal(DataObject.payment_amount, 84);
         should.equal(DataObject.start_epoch, 1483765282);
         should.equal(DataObject.type, 1);
-        should.equal(DataObject.url, 'https://www.dash.org');
+        should.equal(DataObject.url, 'https://www.monoeci.io');
         done();
       });
     });
@@ -5383,8 +5383,8 @@ describe('Bitcoin Service', function() {
 				        break;
 				      case "addr":
 					      return cb(null, { result:
-						      { '06c4c53b64019a021e8597c19e40807038cab4cd422ca9241db82aa19887354b-0': "108.61.209.47:9999",
-							      'b76bafae974b80204e79858eb62aedec41159519c90d23f811cca1eca40f2e4c-1': "34.226.228.73:9999"}
+						      { '06c4c53b64019a021e8597c19e40807038cab4cd422ca9241db82aa19887354b-0': "108.61.209.47:24157",
+							      'b76bafae974b80204e79858eb62aedec41159519c90d23f811cca1eca40f2e4c-1': "34.226.228.73:24157"}
 					      });
 				      case "status":
 					      return cb(null, { result:
@@ -5405,7 +5405,7 @@ describe('Bitcoin Service', function() {
 		    MNList[0].vin.should.equal("06c4c53b64019a021e8597c19e40807038cab4cd422ca9241db82aa19887354b-0");
 		    MNList[0].status.should.equal("ENABLED");
 		    MNList[0].rank.should.equal(1);
-		    MNList[0].ip.should.equal("108.61.209.47:9999");
+		    MNList[0].ip.should.equal("108.61.209.47:24157");
 		    MNList[0].protocol.should.equal(70206);
 		    MNList[0].payee.should.equal("Xfpp5BxPfFistPPjTe6FucYmtDVmT1GDG3");
 		    MNList[0].activeseconds.should.equal(7016289);
@@ -5449,8 +5449,8 @@ describe('Bitcoin Service', function() {
                 break;
               case "addr":
                 return cb(null, { result:
-                  { '06c4c53b64019a021e8597c19e40807038cab4cd422ca9241db82aa19887354b-0': "108.61.209.47:9999",
-                    'b76bafae974b80204e79858eb62aedec41159519c90d23f811cca1eca40f2e4c-1': "34.226.228.73:9999"}
+                  { '06c4c53b64019a021e8597c19e40807038cab4cd422ca9241db82aa19887354b-0': "108.61.209.47:24157",
+                    'b76bafae974b80204e79858eb62aedec41159519c90d23f811cca1eca40f2e4c-1': "34.226.228.73:24157"}
                 });
               case "status":
                 return cb(null, { result:
@@ -5504,8 +5504,8 @@ describe('Bitcoin Service', function() {
                 break;
               case "addr":
                 return cb(null, { result:
-                  { '06c4c53b64019a021e8597c19e40807038cab4cd422ca9241db82aa19887354b-0': "108.61.209.47:9999",
-                    'b76bafae974b80204e79858eb62aedec41159519c90d23f811cca1eca40f2e4c-1': "34.226.228.73:9999"}
+                  { '06c4c53b64019a021e8597c19e40807038cab4cd422ca9241db82aa19887354b-0': "108.61.209.47:24157",
+                    'b76bafae974b80204e79858eb62aedec41159519c90d23f811cca1eca40f2e4c-1': "34.226.228.73:24157"}
                 });
               case "status":
                 return cb(null, { result:
